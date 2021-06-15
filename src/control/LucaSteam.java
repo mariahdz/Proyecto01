@@ -33,7 +33,7 @@ public class LucaSteam {
 		do {
 			Menu.mostrarMenu();
 			continuar = this.seleccionOpciones();
-		}while(continuar=true);
+		}while(continuar==true);
 		System.out.println("--- Fin de la sesión ---");
 	}
 	
