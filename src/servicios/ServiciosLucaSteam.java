@@ -11,6 +11,7 @@ import model.Juego;
 
 public interface ServiciosLucaSteam {
 	
-	public void addJuego(int codigo, Juego juego);
+	public boolean addJuego(int codigo, Juego juego);
+	public boolean addJuego();
 
 }

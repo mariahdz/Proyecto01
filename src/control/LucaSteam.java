@@ -1,5 +1,6 @@
 package control;
 
+
 import gui.Menu;
 import servicios.ServiciosLucaSteam;
 import servicios.ServiciosLucaSteamImp;
@@ -11,7 +12,18 @@ import utilidades.RecogerDatos;
 * @author María Hernández
 * @version 15/06/2021/A
 */
+
+import utilidades.RecogerDatos;
+
+
 public class LucaSteam {
+	
+	
+	 private boolean salir() throws Exception {
+	        String seguro = RecogerDatos.recogeString("¿Estás seguro? (s/n");
+	        return (seguro.toUpperCase().charAt(0) != 's');
+	    }
+
 
 	private ServiciosLucaSteam inventario = new ServiciosLucaSteamImp();
 	
