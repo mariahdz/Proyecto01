@@ -114,9 +114,7 @@ public class InventarioImp implements Inventario {
 		.map(j -> j.getValue())
 		.collect(Collectors.toList());
 		return juegos;
-		/*.forEach(juegos -> {
-			System.out.println(juegos.getValue());
-		});*/
+		
 	}
 	
 
