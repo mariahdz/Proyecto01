@@ -2,6 +2,7 @@ package control;
 
 
 import gui.Menu;
+import model.Juego;
 import servicios.ServiciosLucaSteam;
 import servicios.ServiciosLucaSteamImp;
 import utilidades.RecogerDatos;
@@ -33,7 +34,7 @@ public class LucaSteam {
 			Menu.mostrarMenu();
 			continuar = this.seleccionOpciones();
 		}while(continuar=true);
-		System.out.println();
+		System.out.println("--- Fin de la sesión ---");
 	}
 	
 	public boolean seleccionOpciones() {
@@ -45,9 +46,26 @@ public class LucaSteam {
 				
 				case 1:
 					//Alta de un juego
+					inventario.addJuego();
+					break;
 					
+				case 2:
+					//Listar los juegos disponibles
 					
+					break;
+					
+				case 3:
+					//Listar los juegos disponibles de tipo plataforma
+					
+					break;
+					
+				case 0:
+					continuar = salir();
+					break;
 			}
+		} catch (Exception e) {
+			System.out.println("Error: "+e.toString());
 		}
+		return continuar;
 	}
 }
