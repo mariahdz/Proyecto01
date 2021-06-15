@@ -1,6 +1,5 @@
 package model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import utilidades.RecogerDatos;
 
@@ -12,10 +11,11 @@ import utilidades.RecogerDatos;
  * @version 15/06/2021/A
  */
 
-@Data @AllArgsConstructor
+@Data
 public class Juego {
 
 	public static int ID = 0;
+	private int selfID;
 	private int rank;
 	private String name;
 	private String platform;
@@ -32,10 +32,48 @@ public class Juego {
 		super();
 		ID++;
 	}
+	
+	public Juego(String[] line) {
+		super();
+		ID++;
+		this.selfID = Juego.ID;
+		this.rank = Integer.parseInt(line[0]);
+		this.name = line[1];
+		this.platform = line[2];
+		this.year = Integer.parseInt(line[3]);
+		this.genre = line[4];
+		this.publisher = line[5];
+		this.naSales = Double.parseDouble(line[6]);
+		this.euSales = Double.parseDouble(line[7]);
+		this.jpSales = Double.parseDouble(line[8]);
+		this.otherSales = Double.parseDouble(line[9]);
+		this.globalSales = Double.parseDouble(line[10]);
+	}
+	
+	public Juego(int rank, String name, String platform, int year, String genre, String publisher, double naSales,
+			double euSales, double jpSales, double otherSales, double globalSales) {
+		super();
+		ID++;
+		this.selfID = Juego.ID;
+		this.rank = rank;
+		this.name = name;
+		this.platform = platform;
+		this.year = year;
+		this.genre = genre;
+		this.publisher = publisher;
+		this.naSales = naSales;
+		this.euSales = euSales;
+		this.jpSales = jpSales;
+		this.otherSales = otherSales;
+		this.globalSales = globalSales;
+	}
+	
+	
 
 	public void crearJuego() {
 
 		try {
+			this.selfID = Juego.ID;
 			this.rank = RecogerDatos.recogeInt("Introduce el rango del juego");
 			this.name = RecogerDatos.recogeString("Introduce nombre del juego");
 			this.platform = RecogerDatos.recogeString("Introduce la plataforma");
@@ -51,5 +89,9 @@ public class Juego {
 			e.getStackTrace();
 		}
 	}
+
+
+
+	
 
 }

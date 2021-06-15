@@ -106,9 +106,7 @@ public class InventarioImp implements Inventario {
 	}
 	
 	private Juego lineToJuego(String[] linea) {
-		Juego juego = new Juego(Integer.parseInt(linea[0]),linea[1],linea[2],Integer.parseInt(linea[3]), 
-				linea[4], linea[5],Double.parseDouble(linea[6]),Double.parseDouble(linea[7]), 
-				Double.parseDouble(linea[8]), Double.parseDouble(linea[9]),Double.parseDouble(linea[10]));
+		Juego juego = new Juego(linea);
 		return juego;
 	}
 
