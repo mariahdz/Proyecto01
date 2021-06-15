@@ -1,5 +1,6 @@
 package servicios;
 
+import datos.Inventario;
 import datos.InventarioImp;
 import model.Juego;
 
@@ -12,16 +13,16 @@ import model.Juego;
 
 public class ServiciosLucaSteamImp implements ServiciosLucaSteam {
 	
-	private InventarioImp  inventario = new InventarioImp();
+	private Inventario inventario = new InventarioImp();
 	
-	public void addJuego() {
+	public boolean addJuego() {
         Juego juego = new Juego();
         juego.crearJuego();
-        addJuego(Juego.ID, juego);
+        return addJuego(Juego.ID, juego);
     }
 
-    public void addJuego(int codigo, Juego juego) {
-         inventario.addJuego(codigo, juego);
+    public boolean addJuego(int codigo, Juego juego) {
+         return inventario.addJuego(codigo, juego);
     }
 
 }
