@@ -3,10 +3,10 @@ package datos;
 import model.Juego;
 
 /**
- * 
- * @author María Hernández
- * @version 15/06/2021/A
- *
+* Interfaz: Inventario<br>
+* Descripción: Esta interfaz sirve para contener los métodos que gestionan los datos
+* @author María Hernández
+* @version 15/06/2021/A
  */
 public interface Inventario {
 

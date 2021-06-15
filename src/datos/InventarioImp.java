@@ -13,10 +13,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- * <p>
- * @author María Hernández
- * @version 15/06/2021/A
- * </p>
+* Clase: InventarioImp<br>
+* Descripción: Esta clase sirve para trabajar con datos e implementa la interfaz Inventario 
+* @author María Hernández
+* @version 15/06/2021/A
 */
 public class InventarioImp implements Inventario {
 
