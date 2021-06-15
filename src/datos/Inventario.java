@@ -12,5 +12,6 @@ public interface Inventario {
 
 	public boolean addJuego(int pk, Juego j);
 	public boolean existePk(int pk);
+	public boolean cargaInicial();
 	
 }
