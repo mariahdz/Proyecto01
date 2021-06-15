@@ -61,12 +61,12 @@ public class InventarioImp implements Inventario {
 	}
 
 	/**
-	 * <p>
+	 *<p>
 	 * Método que devuelve si existe un registro.
-	 * 
+	 * @author María Hernández
 	 * @param pk- Primary Key
 	 * @return boolean
-	 *         </p>
+	 * </p>
 	 */
 	public boolean existePk(int pk) {
 		return inventario.containsKey(pk);
