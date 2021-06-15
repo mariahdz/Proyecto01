@@ -22,7 +22,7 @@ public class LucaSteam {
 	
 	 private boolean salir() throws Exception {
 	        String seguro = RecogerDatos.recogeString("¿Estás seguro? (s/n");
-	        return (seguro.toUpperCase().charAt(0) != 's');
+	        return (seguro.toLowerCase().charAt(0) != 's');
 	    }
 
 
@@ -67,5 +67,12 @@ public class LucaSteam {
 			System.out.println("Error: "+e.toString());
 		}
 		return continuar;
+	}
+	
+	public void imprimirPantalla() {
+		inventario.listarJuegos();
+		for (Juego juego : inventario.listarJuegos()) {
+			System.out.println(juego.getName());
+		}
 	}
 }

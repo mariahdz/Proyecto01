@@ -1,5 +1,7 @@
 package servicios;
 
+import java.util.List;
+
 import datos.Inventario;
 import datos.InventarioImp;
 import model.Juego;
@@ -24,5 +26,8 @@ public class ServiciosLucaSteamImp implements ServiciosLucaSteam {
     public boolean addJuego(int codigo, Juego juego) {
          return inventario.addJuego(codigo, juego);
     }
-
+    
+    public List<Juego> listarJuegos() {
+    	return inventario.listarJuegos();
+    }
 }

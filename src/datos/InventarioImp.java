@@ -1,20 +1,15 @@
 package datos;
 
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import model.Juego;
-
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+
 
 /**
  * Clase: InventarioImp<br>
@@ -92,7 +87,7 @@ public class InventarioImp implements Inventario {
 	         while (null!=line) {
 	            String [] fields = line.split(SEPARATOR);
 	            juego = lineToJuego(fields);
-	            inventario.put(Juego.ID, juego);
+	            inventario.put(juego.getSelfID(), juego);
 	            line = br.readLine();
 	         }
 	         if (null!=br)
@@ -109,5 +104,20 @@ public class InventarioImp implements Inventario {
 		Juego juego = new Juego(linea);
 		return juego;
 	}
+	
+	public List<Juego> listarJuegos() {
+		
+		List<Juego> juegos =
+		
+		inventario.entrySet()
+		.stream()
+		.map(j -> j.getValue())
+		.collect(Collectors.toList());
+		return juegos;
+		/*.forEach(juegos -> {
+			System.out.println(juegos.getValue());
+		});*/
+	}
+	
 
 }

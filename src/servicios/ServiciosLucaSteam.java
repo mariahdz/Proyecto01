@@ -1,5 +1,7 @@
 package servicios;
 
+import java.util.List;
+
 import model.Juego;
 
 /**
@@ -13,5 +15,9 @@ public interface ServiciosLucaSteam {
 	
 	public boolean addJuego(int codigo, Juego juego);
 	public boolean addJuego();
+	
+	public List<Juego> listarJuegos();
+	
+	
 
 }
