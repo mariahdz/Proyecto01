@@ -8,15 +8,13 @@ package Test;
  */
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import datos.InventarioImp;
 import model.Juego;
 
 
 public class InventarioTest {
-	//private InventarioImp inventario = new InventarioImp();
+	private InventarioImp inventario = new InventarioImp();
 	/* private static Logger logger;
 	
 	
@@ -34,6 +32,8 @@ public class InventarioTest {
 	
 	@Test
 	public void existeJuego() {
+		
+		
 		
 		//logger.info("probando si juego ya existe");
 		InventarioImp inventarioImp = new InventarioImp();
