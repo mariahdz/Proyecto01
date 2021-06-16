@@ -1,5 +1,13 @@
 package control;
 
+/**
+ * <p>
+ * Clase: LucaSteam<br>
+ * Descripción: Esta clase sirve para iniciar el programa.
+ * @author María Hernández
+ * @version 15/06/2021/A
+ * <\p>
+ */
 
 import gui.Menu;
 import model.Juego;
@@ -28,15 +36,24 @@ public class LucaSteam {
 
 	private ServiciosLucaSteam inventario = new ServiciosLucaSteamImp();
 	
+	/**
+	 * Método que incia la aplicación LucaSteam.
+	 * @author María Hernández
+	 */
 	public void iniciarLucaSteam() {
 		boolean continuar = true;
 		do {
 			Menu.mostrarMenu();
 			continuar = this.seleccionOpciones();
-		}while(continuar==true);
+		}while(continuar);
 		System.out.println("--- Fin de la sesión ---");
 	}
 	
+	/**
+	 * Método que permite escoger al usuario entre diferentes opciones.
+	 * @author María Hernández
+	 * @return boolean
+	 */
 	public boolean seleccionOpciones() {
 		
 		boolean continuar=true;
@@ -51,7 +68,7 @@ public class LucaSteam {
 					
 				case 2:
 					//Listar los juegos disponibles
-					
+					inventario.listarJuegos();					
 					break;
 					
 				case 3:
@@ -68,12 +85,14 @@ public class LucaSteam {
 		}
 		return continuar;
 	}
-	
+
+/*
+
 	public void imprimirPantalla() {
 		if(!inventario.listarJuegos().isEmpty()){
 		for (Juego juego : inventario.listarJuegos()) {
 			System.out.println(juego);
 		}
 		}
-	}
+	}*/
 }
