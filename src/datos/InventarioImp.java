@@ -108,7 +108,6 @@ public class InventarioImp implements Inventario {
 	public List<Juego> listarJuegos() {
 		
 		List<Juego> juegos =
-		
 		inventario.entrySet()
 		.stream()
 		.map(j -> j.getValue())
