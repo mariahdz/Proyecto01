@@ -91,12 +91,14 @@ public class InventarioImp implements Inventario {
 		try {
 
 			br = new BufferedReader(new FileReader("data/vgsales.csv"));
+			br.readLine();
 			String line = br.readLine();
 
 			while (null != line) {
 				String[] fields = line.split(SEPARATOR);
 				juego = lineToJuego(fields);
-				inventario.put(juego.getSelfID(), juego);
+				if (juego != null)
+					inventario.put(juego.getSelfID(), juego);
 				line = br.readLine();
 			}
 			if (null != br)
@@ -111,15 +113,19 @@ public class InventarioImp implements Inventario {
 	}
 
 	private Juego lineToJuego(String[] linea) {
-		Juego juego = new Juego(linea);
+		Juego juego = null;
+		try {
+			juego = new Juego(linea);
+		
+		}catch(Exception e){
+			e.getMessage();
+		}
 		return juego;
 	}
 
 	public void listarJuegos() {
 
-		inventario.entrySet()
-		.stream()
-		.forEach(juegos -> {
+		inventario.entrySet().stream().forEach(juegos -> {
 			System.out.println(juegos.getValue());
 
 		});
