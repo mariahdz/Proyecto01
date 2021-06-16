@@ -85,11 +85,14 @@ public class LucaSteam {
 		}
 		return continuar;
 	}
-	
-	/*public void imprimirPantalla() {
-		inventario.listarJuegos();
+
+/*
+
+	public void imprimirPantalla() {
+		if(!inventario.listarJuegos().isEmpty()){
 		for (Juego juego : inventario.listarJuegos()) {
-			System.out.println(juego.getName());
+			System.out.println(juego);
+		}
 		}
 	}*/
 }

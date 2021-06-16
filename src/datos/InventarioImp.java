@@ -10,15 +10,14 @@ import model.Juego;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-
 /**
  * <p>
  * Clase: InventarioImp<br>
  * Descripción: Esta clase sirve para trabajar con datos e implementa la
  * interfaz Inventario
+ * 
  * @author María Hernández
- * @version 15/06/2021/A
- * <\p>
+ * @version 15/06/2021/A <\p>
  */
 
 public class InventarioImp implements Inventario {
@@ -26,12 +25,15 @@ public class InventarioImp implements Inventario {
 	public static final String SEPARATOR = ",";
 
 	private Map<Integer, Juego> inventario = new HashMap<>();
-	
+
 	public InventarioImp() {
 		super();
 		this.cargaInicial();
 	}
 
+	public static String getSeparator() {
+		return SEPARATOR;
+	}
 
 	public Map<Integer, Juego> getInventario() {
 		return inventario;
@@ -47,6 +49,7 @@ public class InventarioImp implements Inventario {
 	/**
 	 * <p>
 	 * Método que añade un juego nuevo al inventario.
+	 * 
 	 * @author María Hernández
 	 * @param pk - Primary Key
 	 * @param j  - Juego
@@ -64,12 +67,13 @@ public class InventarioImp implements Inventario {
 	}
 
 	/**
-	 *<p>
+	 * <p>
 	 * Método que devuelve si existe un registro.
+	 * 
 	 * @author María Hernández
 	 * @param pk- Primary Key
 	 * @return boolean
-	 * </p>
+	 *         </p>
 	 */
 	public boolean existePk(int pk) {
 		return inventario.containsKey(pk);
@@ -86,49 +90,43 @@ public class InventarioImp implements Inventario {
 	public boolean cargaInicial() {
 		BufferedReader br = null;
 		Juego juego;
-	      
-	      try {
-	         
-	         br =new BufferedReader(new FileReader("data/vgsales.csv"));
-	         String line = br.readLine();
-	         
-	         while (null!=line) {
-	            String [] fields = line.split(SEPARATOR);
-	            juego = lineToJuego(fields);
-	            inventario.put(juego.getSelfID(), juego);
-	            line = br.readLine();
-	         }
-	         if (null!=br)
-		            br.close();
-	         
-	      } catch (Exception e) {
-	    	 
-	         System.out.println(e.getMessage());
-	      } 
-	      
+
+		try {
+
+			br = new BufferedReader(new FileReader("data/vgsales.csv"));
+			String line = br.readLine();
+
+			while (null != line) {
+				String[] fields = line.split(SEPARATOR);
+				juego = lineToJuego(fields);
+				inventario.put(juego.getSelfID(), juego);
+				line = br.readLine();
+			}
+			if (null != br)
+				br.close();
+
+		} catch (Exception e) {
+
+			System.out.println(e.getMessage());
+		}
+
 		return false;
 	}
-	
+
 	private Juego lineToJuego(String[] linea) {
 		Juego juego = new Juego(linea);
 		return juego;
 	}
-	
-	public void listarJuegos() {
-		
 
-		
+	public void listarJuegos() {
+
 		inventario.entrySet()
 		.stream()
-		//.map(j -> j.getValue())
-		//.collect(Collectors.toList());
-		
 		.forEach(juegos -> {
 			System.out.println(juegos.getValue());
-			
+
 		});
-		
+
 	}
-	
 
 }

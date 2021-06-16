@@ -24,7 +24,12 @@ public class ServiciosLucaSteamImp implements ServiciosLucaSteam {
     }
 
     public boolean addJuego(int codigo, Juego juego) {
-         return inventario.addJuego(codigo, juego);
+    	if(juego != null) {
+    		 inventario.addJuego(codigo, juego);
+    		 return true;
+    	}else {
+    		return false;
+    	}
     }
     
     public void listarJuegos() {
