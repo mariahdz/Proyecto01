@@ -1,11 +1,8 @@
 package datos;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
-import lombok.Data;
 import model.Juego;
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -20,7 +20,7 @@ public class ServiciosLucaSteamImp implements ServiciosLucaSteam {
 	public boolean addJuego() {
         Juego juego = new Juego();
         juego.crearJuego();
-        return addJuego(Juego.ID, juego);
+        return addJuego(juego.getSelfID(), juego);
     }
 
     public boolean addJuego(int codigo, Juego juego) {

@@ -10,18 +10,8 @@ package control;
  */
 
 import gui.Menu;
-import model.Juego;
 import servicios.ServiciosLucaSteam;
 import servicios.ServiciosLucaSteamImp;
-import utilidades.RecogerDatos;
-
-/**
-* Clase: LucaSteam <br>
-* Descripción: Esta clase sirve dar inicio al prog
-* @author María Hernández
-* @version 15/06/2021/A
-*/
-
 import utilidades.RecogerDatos;
 
 
