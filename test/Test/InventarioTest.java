@@ -1,15 +1,17 @@
 package Test;
 
+import static org.junit.Assert.assertNotNull;
+
 /**
 * Test metodo addJuego de Inventario
-* Descripción: Test que prueba el metodo addJuego 
+* Descripción: Test que prueba los metodos addJuego y 
 * @author Daniela Posas
 * @version 15/06/2021/A
  */
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.junit.After;
@@ -29,7 +31,7 @@ public class InventarioTest {
 	
 	 private static Logger logger;
 
-	
+
 	// Inicializo
 		static {
 			try {
@@ -149,19 +151,28 @@ public class InventarioTest {
 		InventarioImp inventarioImp = new InventarioImp();
 		Juego juego = new Juego();
 		juego = null;
-		boolean resultadoObtenido = inventarioImp.addJuego(2, juego);
+		boolean resultadoObtenido = inventarioImp.addJuego(2, null);
 		boolean resultadoEsperado = false;
 		
 		assertEquals(resultadoObtenido, resultadoEsperado);
 	}
 	
+	
+	
+	
+	/**
+	 * <p>
+	 * Test que comprueba que devuelve false cuando en el metodo
+	 * existePk se inserta una clave que no existe.
+	 * </p>
+	 */
 	@Test
 	public void noExisteJuego() {
 		
-		logger.info("probando si el juego no existe");
+		logger.info("probando que existePk devuelva false si la clave insertada no existe");
 		InventarioImp inventarioImp = new InventarioImp();
 		Juego juego = new Juego();
-		inventarioImp.addJuego(2, juego);
+		inventarioImp.addJuego(3, juego);
 		
 		boolean resultadoObtenido = inventarioImp.existePk(2);
 		boolean resultadoEsperado = false;
@@ -170,34 +181,15 @@ public class InventarioTest {
 		
 	}
 
-	
-	@Test
-	public void insertarClaveNull() {
-		logger.info("probando que no se inserta Juego con clave null");
-		InventarioImp inventarioImp = new InventarioImp();
-		Juego juego = new Juego();
-		Integer clave = null;
-		boolean resultadoObtenido = inventarioImp.addJuego(clave, juego);
-		boolean resultadoEsperado = false;
-		
-		assertEquals(resultadoObtenido, resultadoEsperado);
-	}
+
 	
 	
-	@Test
-	public void insertarClaveYJuegoNull() {
-		logger.info("probando que no se inserta Juego con clave y juego null");
-		InventarioImp inventarioImp = new InventarioImp();
-		Juego juego = new Juego();
-		Integer clave = null;
-		boolean resultadoObtenido = inventarioImp.addJuego(clave, null);
-		boolean resultadoEsperado = false;
-		
-		assertEquals(resultadoObtenido, resultadoEsperado);
-	}
-	
-	
-	
+	/**
+	 * <p>
+	 * Test que comprueba que no se anyade un juego a la lista si
+	 * ya existe esa clave
+	 * </p>
+	 */
 	@Test 
 	public void insertarJuegoExistente() {
 		logger.info("probando si juego ya existe");
@@ -213,21 +205,43 @@ public class InventarioTest {
 	}
 	
 	
-	@Test 
-	public void insertarJuegoExistente1() {
-		logger.info("probando si juego ya existe");
+	
+	/**
+	 * <p>
+	 * Test que comprueba que devuelve false cuando se intenta buscar un juego en una
+	 * lista vacia
+	 * </p>
+	 */
+	@Test
+	public void buscarEnListaVacia() {
+		logger.info("probando si juego está en una lista vacía");
 		InventarioImp inventarioImp = new InventarioImp();
-		Juego juego = new Juego();
-		inventarioImp.addJuego(2,null);
 		
-		boolean resultadoObtenido = inventarioImp.addJuego(2,null);
+		boolean resultadoObtenido = inventarioImp.existePk(2);
 		boolean resultadoEsperado = false;
 		
 		assertEquals(resultadoEsperado, resultadoObtenido);
+	}
+	
+	
+	//////////////////// LISTAR JUEGOS////////////////////////////////77
+	@Test
+	public void listarJuegosListaVacia() {
+	   logger.info(" ");
+	   InventarioImp inventarioImp = new InventarioImp();
+	   List<Juego> = inventarioImp.listarJuegos();
+	   Juego juego1 = new Juego();
+	   Juego juego2 = new Juego();
+	   
+
+	   
+	    
+	   assertNotNull("La lista 'juegos' que devuelve es null:", listaJuegos);
 		
 	}
 	
-
+	
+	
 	
 	
 	

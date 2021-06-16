@@ -17,7 +17,5 @@ public interface Inventario {
 	public boolean cargaInicial();
 	public void listarJuegos();
 	
-	
-	
-	
+
 }
