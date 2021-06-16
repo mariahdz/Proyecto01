@@ -145,4 +145,5 @@ public class InventarioImp implements Inventario {
 		inventario.get(key).setRank(value);
 	}
 
+
 }
