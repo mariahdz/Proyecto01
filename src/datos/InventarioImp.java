@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 import model.Juego;
+import utilidades.RecogerDatos;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 
@@ -79,7 +81,7 @@ public class InventarioImp implements Inventario {
 	/**
 	 * <p>
 	 * Método que reliza la carga inicial de datos en el programa.
-	 * 
+	 * @author Irene
 	 * @return boolean
 	 *         </p>
 	 */
@@ -125,11 +127,22 @@ public class InventarioImp implements Inventario {
 
 	public void listarJuegos() {
 
+
 		inventario.entrySet().stream().forEach(juegos -> {
 			System.out.println(juegos.getValue());
 
 		});
 
+	}
+	
+	/**
+	 * Método: Recibe una clave y un valor para actualizar un registro del Map
+	 * @author Irene
+	 * @param key
+	 * @param value
+	 */
+	public void editarRanking(int key, int value) {
+		inventario.get(key).setRank(value);
 	}
 
 }

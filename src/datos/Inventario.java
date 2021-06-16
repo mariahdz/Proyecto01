@@ -16,6 +16,7 @@ public interface Inventario {
 	public boolean existePk(int pk);
 	public boolean cargaInicial();
 	public void listarJuegos();
+	public void editarRanking(int key, int value);
 	
 
 }

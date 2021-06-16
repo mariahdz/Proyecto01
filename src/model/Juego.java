@@ -28,10 +28,21 @@ public class Juego {
 	private double otherSales;
 	private double globalSales;
 
+	/**
+	 * Constructor vacío, suma al crear una instancia el ID
+	 * @author Irene
+	 * @version 15/06/2021/A
+	 */
 	public Juego() {
 		super();
 		ID++;
 	}
+	
+	/**
+	 * Constructor que toma un array de Strings para parsear todos
+	 * los valores
+	 * @param line
+	 */
 	
 	public Juego(String[] line) {
 		super();
@@ -50,6 +61,21 @@ public class Juego {
 		this.globalSales = Double.parseDouble(line[10]);
 	}
 	
+	/**
+	 * Constructor con todos los valores necesarios
+	 * @author Irene
+	 * @param rank
+	 * @param name
+	 * @param platform
+	 * @param year
+	 * @param genre
+	 * @param publisher
+	 * @param naSales
+	 * @param euSales
+	 * @param jpSales
+	 * @param otherSales
+	 * @param globalSales
+	 */
 	public Juego(int rank, String name, String platform, int year, String genre, String publisher, double naSales,
 			double euSales, double jpSales, double otherSales, double globalSales) {
 		super();
@@ -68,7 +94,11 @@ public class Juego {
 		this.globalSales = globalSales;
 	}
 	
-	
+	/**
+	 * Método pensado para utilizar junto con el constructor vacío.
+	 * 
+	 * @author Irene
+	 */
 
 	public void crearJuego() {
 
@@ -78,15 +108,16 @@ public class Juego {
 			this.name = RecogerDatos.recogeString("Introduce nombre del juego");
 			this.platform = RecogerDatos.recogeString("Introduce la plataforma");
 			this.year = RecogerDatos.recogeInt("Introduce el año del juego");
-			this.genre = RecogerDatos.recogeString("Introduce la género del juego");
+			this.genre = RecogerDatos.recogeString("Introduce el género del juego");
 			this.publisher = RecogerDatos.recogeString("Introduce el publisher del juego");
 			this.naSales = RecogerDatos.recogeDouble("Introduce la cantidad de NA_Sales");
 			this.euSales = RecogerDatos.recogeDouble("Introduce la cantidad de EU_Sales");
 			this.jpSales = RecogerDatos.recogeDouble("Introduce la cantidad de JP_Sales");
 			this.otherSales = RecogerDatos.recogeDouble("Introduce la cantidad de other_Sales");
 			this.globalSales = RecogerDatos.recogeDouble("Introduce la cantidad de global_Sales");
+			System.out.println("Juego creado correctamente.");
 		} catch (Exception e) {
-			e.getStackTrace();
+			System.out.println("Por favor, introduzca valores adecuados.");
 		}
 	}
 
