@@ -27,7 +27,7 @@ public class ServiciosLucaSteamImp implements ServiciosLucaSteam {
          return inventario.addJuego(codigo, juego);
     }
     
-    public List<Juego> listarJuegos() {
-    	return inventario.listarJuegos();
+    public void listarJuegos() {
+    	inventario.listarJuegos();
     }
 }

@@ -16,7 +16,7 @@ public interface ServiciosLucaSteam {
 	public boolean addJuego(int codigo, Juego juego);
 	public boolean addJuego();
 	
-	public List<Juego> listarJuegos();
+	public void listarJuegos();
 	
 	
 

@@ -5,25 +5,33 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
-
+import lombok.Data;
 import model.Juego;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
 
 /**
+ * <p>
  * Clase: InventarioImp<br>
  * Descripción: Esta clase sirve para trabajar con datos e implementa la
  * interfaz Inventario
- * 
  * @author María Hernández
  * @version 15/06/2021/A
+ * <\p>
  */
+
 public class InventarioImp implements Inventario {
 
 	public static final String SEPARATOR = ",";
 
 	private Map<Integer, Juego> inventario = new HashMap<>();
+	
+	public InventarioImp() {
+		super();
+		this.cargaInicial();
+	}
+
 
 	public Map<Integer, Juego> getInventario() {
 		return inventario;
@@ -39,7 +47,7 @@ public class InventarioImp implements Inventario {
 	/**
 	 * <p>
 	 * Método que añade un juego nuevo al inventario.
-	 * 
+	 * @author María Hernández
 	 * @param pk - Primary Key
 	 * @param j  - Juego
 	 * @return boolean
@@ -81,7 +89,7 @@ public class InventarioImp implements Inventario {
 	      
 	      try {
 	         
-	         br =new BufferedReader(new FileReader("../data/vgsales.csv"));
+	         br =new BufferedReader(new FileReader("data/vgsales.csv"));
 	         String line = br.readLine();
 	         
 	         while (null!=line) {
@@ -94,7 +102,8 @@ public class InventarioImp implements Inventario {
 		            br.close();
 	         
 	      } catch (Exception e) {
-	         e.getMessage();
+	    	 
+	         System.out.println(e.getMessage());
 	      } 
 	      
 		return false;
@@ -105,18 +114,20 @@ public class InventarioImp implements Inventario {
 		return juego;
 	}
 	
-	public List<Juego> listarJuegos() {
+	public void listarJuegos() {
 		
-		List<Juego> juegos =
+
 		
 		inventario.entrySet()
 		.stream()
-		.map(j -> j.getValue())
-		.collect(Collectors.toList());
-		return juegos;
-		/*.forEach(juegos -> {
+		//.map(j -> j.getValue())
+		//.collect(Collectors.toList());
+		
+		.forEach(juegos -> {
 			System.out.println(juegos.getValue());
-		});*/
+			
+		});
+		
 	}
 	
 
