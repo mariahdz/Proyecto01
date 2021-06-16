@@ -25,6 +25,10 @@ public class InventarioImp implements Inventario {
 
 	private Map<Integer, Juego> inventario = new HashMap<>();
 
+	public static String getSeparator() {
+		return SEPARATOR;
+	}
+
 	public Map<Integer, Juego> getInventario() {
 		return inventario;
 	}

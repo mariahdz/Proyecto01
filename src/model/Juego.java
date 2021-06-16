@@ -70,6 +70,110 @@ public class Juego {
 	
 	
 
+	public static int getID() {
+		return ID;
+	}
+
+	public static void setID(int iD) {
+		ID = iD;
+	}
+
+	public int getSelfID() {
+		return selfID;
+	}
+
+	public void setSelfID(int selfID) {
+		this.selfID = selfID;
+	}
+
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPlatform() {
+		return platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
+	public String getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+
+	public double getNaSales() {
+		return naSales;
+	}
+
+	public void setNaSales(double naSales) {
+		this.naSales = naSales;
+	}
+
+	public double getEuSales() {
+		return euSales;
+	}
+
+	public void setEuSales(double euSales) {
+		this.euSales = euSales;
+	}
+
+	public double getJpSales() {
+		return jpSales;
+	}
+
+	public void setJpSales(double jpSales) {
+		this.jpSales = jpSales;
+	}
+
+	public double getOtherSales() {
+		return otherSales;
+	}
+
+	public void setOtherSales(double otherSales) {
+		this.otherSales = otherSales;
+	}
+
+	public double getGlobalSales() {
+		return globalSales;
+	}
+
+	public void setGlobalSales(double globalSales) {
+		this.globalSales = globalSales;
+	}
+
 	public void crearJuego() {
 
 		try {
