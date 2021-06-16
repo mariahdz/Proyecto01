@@ -18,7 +18,7 @@ import utilidades.RecogerDatos;
 
 
 public class LucaSteam {
-	
+
 	
 	 private boolean salir() throws Exception {
 	        String seguro = RecogerDatos.recogeString("¿Estás seguro? (s/n");
