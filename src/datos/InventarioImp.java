@@ -215,9 +215,6 @@ public class InventarioImp implements Inventario {
 
 	}
 
-	
-	
-	
 	/**
 	 * <p>
 	 * Método que devuelve un HashMap ordenado de manera descendente por el valor del atributo EuSales

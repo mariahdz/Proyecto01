@@ -1,6 +1,5 @@
 package servicios;
 
-import java.util.List;
 
 import datos.Inventario;
 import datos.InventarioImp;
