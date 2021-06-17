@@ -16,7 +16,12 @@ public interface ServiciosLucaSteam {
 	public boolean addJuego(int codigo, Juego juego);
 	public boolean addJuego();
 	
+	public void eliminarJuego () throws Exception;
+	public boolean eliminarJuego(int codigo);
+	
 	public void listarJuegos();
+	
+	public boolean editarRanking(int key);
 	
 	
 

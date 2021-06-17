@@ -2,13 +2,6 @@ package Test;
 
 import static org.junit.Assert.assertNotNull;
 
-/**
-* Test metodo listarMasVendidos
-* Descripción: Test que prueba los metodos listarMasvendidos y leerVentas
-* @author Desiree
-* @version 16/06/2021/A
- */
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;

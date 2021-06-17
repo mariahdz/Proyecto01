@@ -64,6 +64,24 @@ public class InventarioImp implements Inventario {
 			return true;
 		}
 	}
+	
+	/**
+	 * <p>
+	 * Método que permite eliminar del inventrio un juego a través de su clave
+	 * @autor Desiree
+	 * @version 17/06/2021/A
+	 * </p>
+	 */
+	public boolean eliminarJuego(int codigo) {
+		if(!inventario.containsKey(codigo)) {
+			System.out.println("El juego no existe");
+			return false;
+		}else {
+			inventario.remove(codigo);
+			return true;
+		}
+		
+	} 
 
 	/**
 	 * <p>
