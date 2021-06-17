@@ -6,10 +6,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 import java.util.Map.Entry;
 import java.util.TreeMap;
-import java.util.stream.Collectors;
 import model.Juego;
-import utilidades.RecogerDatos;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Collections;
@@ -223,16 +220,18 @@ public class InventarioImp implements Inventario {
 	 * @param map HashMap
 	 * @return Map<double, String>
 	 */
-	public Map<Double, String> leerVentas(Map<Integer, Juego> map) {
-		
-		Map<Double, String> mapa = new HashMap<Double,String>();
-		map.forEach((idJuego,juego) -> mapa.put(juego.getEuSales(), juego.getName()));
-		
+	
+	public Map<Double, String> leerVentas(InventarioImp inventario) {
+
+		Map<Double, String> inventario2 = new HashMap<Double,String>();
+		inventario.getInventario().forEach((idJuego,juego) -> inventario2.put(juego.getEuSales(), juego.getName()));
+
 		Map<Double, String> reverseSortedMap = new TreeMap<Double, String>(Collections.reverseOrder());
-		reverseSortedMap.putAll(mapa);
-		
+		reverseSortedMap.putAll(inventario2);
+
 		return reverseSortedMap;
-    }
+		}
+	
 	
 	
 	/**

@@ -1,6 +1,5 @@
 package datos;
 
-import java.util.List;
 
 import model.Juego;
 
@@ -20,6 +19,7 @@ public interface Inventario {
 	
 	public boolean editarRanking(int key, int value);
 	public boolean listarNombres();
+
 	
 
 }
