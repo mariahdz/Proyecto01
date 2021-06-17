@@ -1,7 +1,7 @@
 package Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import java.util.logging.Logger;
 
 import org.junit.After;
@@ -14,6 +14,8 @@ import org.junit.jupiter.api.Test;
 import datos.Inventario;
 import datos.InventarioImp;
 import model.Juego;
+import servicios.ServiciosLucaSteam;
+import servicios.ServiciosLucaSteamImp;
 
 /**
 * <p>
@@ -72,13 +74,28 @@ private static Logger logger;
 	//TEST
 	//........
 		
-	
 	@Test
 	public void existeJuego() {
 		
-		logger.info("Probando si existe el juego que queremos eliminar");
+		logger.info("Probando si el juego que queremos eliminar existe");
 		
 		Inventario inventario = new InventarioImp();
+		Juego juego = new Juego();
+		inventario.addJuego(2, juego);
+		
+		boolean resultadoObtenido = inventario.existePk(2);
+		boolean resultadoEsperado = true;
+		
+		assertEquals(resultadoEsperado, resultadoObtenido);
+		
+	}
+	
+	@Test
+	public void checkEliminado() {
+		
+		logger.info("Probando si se ha eliminado el juego");
+		
+		ServiciosLucaSteam inventario = new ServiciosLucaSteamImp();
 		Juego juego1 = new Juego();
 		Juego juego2 = new Juego();
 		Juego juego3 = new Juego();
@@ -86,12 +103,11 @@ private static Logger logger;
 		inventario.addJuego(2, juego2);
 		inventario.addJuego(3, juego3);
 		
-		boolean resultadoObtenido = inventario.listarNombres();
+		boolean resultadoObtenido = inventario.eliminarJuego(2);
 		boolean resultadoEsperado = true;
 		
 		assertEquals(resultadoEsperado, resultadoObtenido);
 	
 	}
-
 
 }
