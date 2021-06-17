@@ -20,6 +20,9 @@ public interface Inventario {
 	public boolean editarRanking(int key, int value);
 	public boolean listarNombres();
 
+
+	public void elegirCarga();
+
 	
 
 }

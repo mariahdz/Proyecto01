@@ -32,7 +32,7 @@ private static Logger logger;
 	//Inicializo
 	static {
 		try {
-			logger= Logger.getLogger(EditarRankingTest2.class.getName());
+			logger= Logger.getLogger(EditarRankingTest.class.getName());
 			
 		}catch(Throwable e) {
 			System.out.println("Don't work");
@@ -85,6 +85,21 @@ private static Logger logger;
 		
 		boolean resultadoObtenido = inventario.existePk(2);
 		boolean resultadoEsperado = true;
+		
+		assertEquals(resultadoEsperado, resultadoObtenido);
+		
+	}
+	@Test
+	public void noExisteJuego() {
+		
+		logger.info("Probando si el juego que queremos eliminar no existe");
+		
+		Inventario inventario = new InventarioImp();
+		Juego juego = new Juego();
+		inventario.addJuego(2, juego);
+		
+		boolean resultadoObtenido = inventario.existePk(3);
+		boolean resultadoEsperado = false;
 		
 		assertEquals(resultadoEsperado, resultadoObtenido);
 		

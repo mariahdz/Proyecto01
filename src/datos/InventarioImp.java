@@ -30,10 +30,10 @@ public class InventarioImp implements Inventario {
 
 	private Map<Integer, Juego> inventario = new HashMap<>();
 
-	public InventarioImp() {
+	/*public InventarioImp() {
 		super();
 		this.cargaInicial();
-	}
+	}*/
 
 	public static String getSeparator() {
 		return SEPARATOR;
@@ -50,6 +50,12 @@ public class InventarioImp implements Inventario {
 	/*
 	 * MÉTODOS
 	 */
+	
+	public void elegirCarga () {
+		
+		this.cargaInicial();
+	}
+	
 	/**
 	 * <p>
 	 * Método que añade un juego nuevo al inventario.

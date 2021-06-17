@@ -25,6 +25,8 @@ public interface ServiciosLucaSteam {
 	public boolean editarRanking();
 	public boolean editarRanking(int key);
 	
+	public void elegirCarga();
+	
 	
 
 }

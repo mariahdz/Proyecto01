@@ -16,7 +16,6 @@ import utilidades.RecogerDatos;
 
 
 
-
 public class LucaSteam {
 
 	
@@ -47,53 +46,56 @@ public class LucaSteam {
 	 * @return boolean
 	 */
 	public boolean seleccionOpciones() {
-
+		
 		boolean continuar=true;
-
+		
 		try {
 			switch (RecogerDatos.recogeInt()) {
-
-
-			case 1:
-			//Alta de un juego
-			inventario.addJuego();
-			break;
-
-			case 2:
-			//Listar los juegos disponibles
-			inventario.listarJuegos();
-			break;
-	
-			case 3:
-			//Top 10 juegos más vendidos
-			//inventario.listarMasVendidos();
-			break;
-	
-			case 4:
-			//Listar los juegos por nombre
-			inventario.listarNombres();
-			break;
-	
-			case 5:
-			//Editar ranking de un juego
-			inventario.editarRanking();
-			break;
-	
-			case 6:
-			//Eliminar un juego
-			inventario.eliminarJuego();
-			break;
-	
-			case 0:
-			continuar = salir();
-			break;
-		}
-
+				
+				case 1:
+					//Carga masiva CSV
+					inventario.elegirCarga();		
+					break;
+					
+				case 2:
+					//Alta de un juego
+					inventario.addJuego();
+					break;
+					
+				case 3:
+					//Listar los juegos disponibles
+					inventario.listarJuegos();					
+					break;
+					
+				case 4:
+					//Top 10 juegos más vendidos
+					//inventario.listarMasVendidos();
+					break;
+					
+				case 5:
+					//Listar los juegos por nombre
+					inventario.listarNombres();
+					break;
+		
+				case 6:
+					//Editar ranking de un juego
+					inventario.editarRanking();
+					break;
+		
+				case 7:
+					//Eliminar un juego
+					inventario.eliminarJuego();
+					break;
+					
+				case 0:
+					continuar = salir();
+					break;
+			}
 		} catch (Exception e) {
 			System.out.println("Error: "+e.toString());
 		}
 		return continuar;
-		}
+	}
 
 /*
 

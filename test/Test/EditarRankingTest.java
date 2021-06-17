@@ -1,6 +1,5 @@
 package Test;
 
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.logging.Logger;
@@ -26,7 +25,7 @@ import servicios.ServiciosLucaSteamImp;
  * @version 16/06/2021/A
  * <\p>
  */
-public class EditarRankingTest2 {
+public class EditarRankingTest {
 
 
 private static Logger logger;
@@ -34,7 +33,7 @@ private static Logger logger;
 	//Inicializo
 	static {
 		try {
-			logger= Logger.getLogger(EditarRankingTest2.class.getName());
+			logger= Logger.getLogger(EditarRankingTest.class.getName());
 			
 		}catch(Throwable e) {
 			System.out.println("Don't work");
@@ -125,15 +124,9 @@ private static Logger logger;
 		boolean resultadoObtenido = inventario.existePk(2);
 		boolean resultadoEsperado = false;
 		
-		assertNotEquals(resultadoEsperado, resultadoObtenido);
+		assertEquals(resultadoEsperado, resultadoObtenido);
 		
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 }

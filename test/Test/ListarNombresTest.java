@@ -30,7 +30,7 @@ private static Logger logger;
 	//Inicializo
 	static {
 		try {
-			logger= Logger.getLogger(EditarRankingTest2.class.getName());
+			logger= Logger.getLogger(EditarRankingTest.class.getName());
 			
 		}catch(Throwable e) {
 			System.out.println("Don't work");

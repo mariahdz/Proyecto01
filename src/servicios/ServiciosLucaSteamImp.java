@@ -40,6 +40,10 @@ public class ServiciosLucaSteamImp implements ServiciosLucaSteam {
 		}
 	}
 	
+	public void elegirCarga() {
+		inventario.elegirCarga();
+	}
+	
 	/**
 	 * <p>
 	 * Método que permite eliminar del inventario un juego solicitando la clave por teclado
