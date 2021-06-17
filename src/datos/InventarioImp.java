@@ -89,6 +89,7 @@ public class InventarioImp implements Inventario {
 			return false;
 		}else {
 			inventario.remove(codigo);
+			System.out.println("--Juego eliminado--");
 			return true;
 		}
 		
