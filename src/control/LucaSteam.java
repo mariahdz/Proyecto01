@@ -63,8 +63,23 @@ public class LucaSteam {
 					break;
 					
 				case 3:
-					//Listar los juegos disponibles de tipo plataforma
+					//Top 10 juegos más vendidos
+					//inventario.listarMasVendidos();
+					break;
 					
+				case 4:
+					//Listar los juegos por nombre
+					inventario.listarNombres();
+					break;
+		
+				case 5:
+					//Editar ranking de un juego
+					inventario.editarRanking();
+					break;
+		
+				case 6:
+					//Eliminar un juego
+					//inventario.eliminarJuego();
 					break;
 					
 				case 0:
