@@ -142,15 +142,21 @@ public class InventarioImp implements Inventario {
 		}
 		return juego;
 	}
-
-	public void listarJuegos() {
-
+	
+	/**
+	 * Este método muestra todos los juegos por pantalla
+	 * @autor desiree
+	 * @version 17/06/2021/A
+	 */
+	public boolean listarJuegos() {
+		if(!inventario.isEmpty()) {
 		inventario.entrySet().stream().forEach(juegos -> {
 		System.out.println(juegos.getValue());
-
 		});
+		return true;
+		}
+		return false;
 	}
-	
 	/**
 	 * Método: Recibe una clave y un valor para actualizar un registro del Map
 	 * @author Irene

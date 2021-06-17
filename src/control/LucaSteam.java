@@ -71,12 +71,12 @@ public class LucaSteam {
 	
 			case 4:
 			//Listar los juegos por nombre
-			//inventario.listarNombres();
+			inventario.listarNombres();
 			break;
 	
 			case 5:
 			//Editar ranking de un juego
-			//inventario.editarRanking();
+			inventario.editarRanking();
 			break;
 	
 			case 6:

@@ -16,7 +16,7 @@ public interface Inventario {
 	public boolean eliminarJuego(int codigo);
 	public boolean existePk(int pk);
 	public boolean cargaInicial();
-	public void listarJuegos();
+	public boolean listarJuegos();
 	
 	public boolean editarRanking(int key, int value);
 	public boolean listarNombres();
