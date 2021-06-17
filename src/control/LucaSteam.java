@@ -20,7 +20,7 @@ public class LucaSteam {
 
 	
 	 private boolean salir() throws Exception {
-	        String seguro = RecogerDatos.recogeString("¿Estás seguro? (s/n");
+	        String seguro = RecogerDatos.recogeString("¿Estás seguro? (s/n)");
 	        return (seguro.toLowerCase().charAt(0) != 's');
 	    }
 
@@ -69,7 +69,7 @@ public class LucaSteam {
 					
 				case 4:
 					//Top 10 juegos más vendidos
-					//inventario.listarMasVendidos();
+					inventario.listarMasVendidos();
 					break;
 					
 				case 5:

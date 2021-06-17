@@ -27,8 +27,9 @@ public interface Inventario {
 	public void elegirCarga();
 
 	
-	public Map<Double,String> leerVentas(InventarioImp inventario);
+	public Map<Double,String> leerVentas(Inventario inventario);
 	public Map<Double,String> listarMasVendidos(Map<Double, String> map);
+	public Map<Integer, Juego> getInventario();
 	
 
 }

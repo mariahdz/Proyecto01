@@ -225,7 +225,7 @@ public class InventarioImp implements Inventario {
 	 */
 
 
-	public Map<Double, String> leerVentas(InventarioImp inventario) {
+	public Map<Double, String> leerVentas(Inventario inventario) {
 		
 		Map<Double, String> inventario2 = new HashMap<Double,String>();
 		inventario.getInventario().forEach((idJuego,juego) -> inventario2.put(juego.getEuSales(), juego.getName()));

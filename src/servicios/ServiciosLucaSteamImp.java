@@ -1,6 +1,8 @@
 package servicios;
 
 
+import java.util.Map;
+
 import datos.Inventario;
 import datos.InventarioImp;
 import model.Juego;
@@ -108,5 +110,11 @@ public class ServiciosLucaSteamImp implements ServiciosLucaSteam {
 	
 	public void listarNombres() {
 		inventario.listarNombres();
+	}
+
+	
+	public void listarMasVendidos() {
+		inventario.listarMasVendidos(inventario.leerVentas(inventario));
+		
 	}
 }
