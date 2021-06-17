@@ -6,7 +6,7 @@ package control;
  * Descripción: Esta clase sirve para iniciar el programa.
  * @author María Hernández
  * @version 15/06/2021/A
- * <\p>
+ * </p>
  */
 
 import gui.Menu;

@@ -1,6 +1,8 @@
-package Test;
+package Test.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,7 +34,7 @@ class ListarMasVendidosTest {
 		// Inicializo
 			static {
 				try {
-					logger = Logger.getLogger( ListarMasVendidosTest.class.getName() );
+					logger = Logger.getLogger(ListarMasVendidosTest.class.getName() );
 					
 				} catch (Throwable e) {
 					System.out.println("Don't work");
@@ -87,7 +89,7 @@ class ListarMasVendidosTest {
 		
 		logger.info("probando que solo se muestren 10 registros");	
 		Inventario inventario = new InventarioImp();
-		Map<Double, String> ventas = new HashMap<>();
+	/*	Map<Double, String> ventas = new HashMap<>();
 		ventas.put(1.000, "Call of Duty");
 		ventas.put(2.000, "Tomb Raider");
 		ventas.put(5.000, "Indiana Jones");
@@ -100,19 +102,90 @@ class ListarMasVendidosTest {
 		ventas.put(15.000, "Red Dead Redemption");
 		ventas.put(25.000, "HellBlade");
 		ventas.put(11.000, "God of War");
+		*/
 		
-		Map<String, Double> resultadoObtenido = inventario.listarMasVendidos(ventas);
-		Map<String, Double> resultadoEsperado = new HashMap<>();
-		resultadoEsperado.put("The Evil Within", 3.000);
-		resultadoEsperado.put("Indiana Jones", 5.000);
-		resultadoEsperado.put("Crash Bandicoot", 10.000);
-		resultadoEsperado.put("Resident Evil", 9.000);
-		resultadoEsperado.put("Silent Hill 4", 20.000);
-		resultadoEsperado.put("The Witcher 2", 10.000);
-		resultadoEsperado.put("FallOut 4", 7.000);
-		resultadoEsperado.put("Red Dead Redemption", 15.000);
-		resultadoEsperado.put("HellBlade", 25.000);
-		resultadoEsperado.put("God of War", 11.000);
+		Juego juego1 = new Juego();
+
+		juego1.setName("Skyrim");
+		juego1.setEuSales(0.2);
+		
+		Juego juego2 = new Juego();
+
+		juego2.setName("God of War");
+		juego2.setEuSales(5.7);
+		
+		Juego juego3 = new Juego();
+		
+		juego3.setName("CyberPunk 2077");
+		juego3.setEuSales(3.9);
+		
+		Juego juego4 = new Juego();
+		
+		juego4.setName("HellBlade");
+		juego4.setEuSales(9.0);
+		
+		Juego juego5 = new Juego();
+		
+		juego5.setName("Silent Hill 4");
+		juego5.setEuSales(10.0);
+		
+		Juego juego6 = new Juego();
+
+		juego6.setName("Resident Evil 4");
+		juego6.setEuSales(1.0);
+		
+		Juego juego7 = new Juego();
+
+		juego7.setName("Crash Bandicoot");
+		juego7.setEuSales(3.0);
+		
+		Juego juego8 = new Juego();
+		
+		juego8.setName("Red Dead Redemption");
+		juego8.setEuSales(6.5);
+		
+		Juego juego9 = new Juego();
+		
+		juego9.setName("The Witcher 2");
+		juego9.setEuSales(2.0);
+		
+		Juego juego10 = new Juego();
+		
+		juego10.setName("Shadow of Colosus");
+		juego10.setEuSales(5.0);
+		
+		Juego juego11 = new Juego();
+		
+		juego11.setName("Tomb Raider 4: The Last Revelation");
+		juego11.setEuSales(7.0);
+		
+		inventario.addJuego(juego1.getSelfID(), juego1);
+		inventario.addJuego(juego2.getSelfID(), juego2);
+		inventario.addJuego(juego3.getSelfID(), juego3);
+		inventario.addJuego(juego4.getSelfID(), juego4);
+		inventario.addJuego(juego5.getSelfID(), juego5);
+		inventario.addJuego(juego6.getSelfID(), juego6);
+		inventario.addJuego(juego7.getSelfID(), juego7);
+		inventario.addJuego(juego8.getSelfID(), juego8);
+		inventario.addJuego(juego9.getSelfID(), juego9);
+		inventario.addJuego(juego10.getSelfID(), juego10);
+		inventario.addJuego(juego11.getSelfID(), juego11);
+		
+		Map <Double, String> juegos = inventario.leerVentas(inventario);
+		
+		
+		Map<Double, String> resultadoObtenido = inventario.listarMasVendidos(juegos);
+		Map<Double, String> resultadoEsperado = new HashMap<>();
+		resultadoEsperado.put(5.0, "Shadow of Colosus");
+		resultadoEsperado.put(3.9, "CyberPunk 2077");
+		resultadoEsperado.put(3.0, "Crash Bandicoot");
+		resultadoEsperado.put(1.0,"Resident Evil 4");
+		resultadoEsperado.put(10.0, "Silent Hill 4");
+		resultadoEsperado.put(2.0, "The Witcher 2");
+		resultadoEsperado.put(7.0, "Tomb Raider 4: The Last Revelation");
+		resultadoEsperado.put(6.5, "Red Dead Redemption");
+		resultadoEsperado.put(9.0, "HellBlade");
+		resultadoEsperado.put(5.7, "God of War");
 		
 		assertEquals(resultadoEsperado, resultadoObtenido);
 		fail("Not yet implemented");
@@ -215,91 +288,15 @@ class ListarMasVendidosTest {
 		resultadoEsperado.put(1.2,"CyberPunk 2077");
 		resultadoEsperado.put(0.2, "Skyrim");
 		
-		/*Map<Double, String> resultadoEsperado = new HashMap<>();
-		Map<Double, String> ventas = new HashMap<>();
-		ventas.put(1.000, "Call of Duty");
-		ventas.put(2.000, "Tomb Raider");
-		ventas.put(5.000, "Indiana Jones");
-		ventas.put(10.000, "Crash Bandicoot");
-		ventas.put(9.000, "Resident Evil");
-		ventas.put(20.000, "Silent Hill 4");
-		ventas.put(3.000, "The Evil Within");
-		ventas.put(10.000, "The Witcher 2");
-		ventas.put(7.000, "FallOut 4");
-		ventas.put(15.000, "Red Dead Redemption");
-		ventas.put(25.000, "HellBlade");
-		ventas.put(11.000, "God of War");
-		
-		
-		Map<Double, String> resultadoObtenido = inventario.leerVentas(ventas);
-		Map<Double, String> resultadoEsperado = new HashMap<>();
-		resultadoEsperado.put(25.000, "HellBlade");
-		resultadoEsperado.put(20.000, "Silent Hill 4");
-		resultadoEsperado.put(15.000, "Red Dead Redemption");
-		resultadoEsperado.put(11.000, "God of War");
-		resultadoEsperado.put(10.000, "Crash Bandicoot");
-		resultadoEsperado.put(8.000, "The Witcher 2");
-		resultadoEsperado.put(9.000, "Resident Evil");
-		resultadoEsperado.put(7.000, "FallOut 4");
-		resultadoEsperado.put(5.000, "Indiana Jones");
-		resultadoEsperado.put(3.000, "The Evil Within");		
-		
-		assertEquals(resultadoEsperado, resultadoObtenido);
-		fail("Not yet implemented");
-	*/	
 	}
 	
-	
-	/** 
-	 * <p>
-	 * Este método comprueba que se invierte la clave-valor recibida"
-	 * </p>
-	 */
-	
-	@Test
-	void invertirDatos() {
-		
-		logger.info("probando que los registros se ordenan de mayor a menor");	
-		Inventario inventario = new InventarioImp();
-		Map<Double, String> ventas = new HashMap<>();
-		ventas.put(1.000, "Call of Duty");
-		ventas.put(2.000, "Tomb Raider");
-		ventas.put(5.000, "Indiana Jones");
-		ventas.put(10.000, "Crash Bandicoot");
-		ventas.put(9.000, "Resident Evil");
-		ventas.put(20.000, "Silent Hill 4");
-		ventas.put(3.000, "The Evil Within");
-		ventas.put(10.000, "The Witcher 2");
-		ventas.put(7.000, "FallOut 4");
-		ventas.put(15.000, "Red Dead Redemption");
-		ventas.put(25.000, "HellBlade");
-		ventas.put(11.000, "God of War");
-		
-		
-		Map<Double, String> resultadoObtenido = inventario.listarMasVendidos(ventas);
-		Map<Double, String> resultadoEsperado = new HashMap<>();
-		resultadoEsperado.put(25.000, "HellBlade");
-		resultadoEsperado.put(20.000, "Silent Hill 4");
-		resultadoEsperado.put(15.000, "Red Dead Redemption");
-		resultadoEsperado.put(11.000, "God of War");
-		resultadoEsperado.put(10.000, "Crash Bandicoot");
-		resultadoEsperado.put(8.000, "The Witcher 2");
-		resultadoEsperado.put(9.000, "Resident Evil");
-		resultadoEsperado.put(7.000, "FallOut 4");
-		resultadoEsperado.put(5.000, "Indiana Jones");
-		resultadoEsperado.put(3.000, "The Evil Within");		
-		
-		assertEquals(resultadoEsperado, resultadoObtenido);
-		fail("Not yet implemented");
-		
-	}
 	
 	/**
 	 * <p>
 	 * Este método comprueba que no entren dos juegos iguales en el ranking"
 	 * </p>
 	 */
-	@Test
+	/*@Test
 	void juegosNoRepetidostest() {
 		
 		logger.info("probando si juego ya existe en el ranking");	
@@ -310,14 +307,14 @@ class ListarMasVendidosTest {
 		ventas.put(1.000,"Call of Duty");
 		
 		
-		Map<String, Double> resultadoObtenido = inventario.listarMasVendidos(ventas);
-		Map<String, Double> resultadoEsperado = new HashMap<>();
-		resultadoEsperado.put("Call of Duty", 1.000);
-		resultadoEsperado.put("Tomb Raider", 2.000);
+		Map<Double, String> resultadoObtenido = inventario.listarMasVendidos(ventas);
+		Map<Double, String> resultadoEsperado = new HashMap<>();
+		resultadoEsperado.put(1.000, "Call of Duty");
+		resultadoEsperado.put(2.000, "Tomb Raider");
 		
 		
 		assertEquals(resultadoEsperado, resultadoObtenido);
 		fail("Not yet implemented");
-	}
+	}*/
 
 }

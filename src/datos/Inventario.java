@@ -1,6 +1,10 @@
 package datos;
 
 
+import java.util.List;
+import java.util.Map;
+
+
 import model.Juego;
 
 /**
@@ -23,6 +27,9 @@ public interface Inventario {
 
 	public void elegirCarga();
 
+	
+	public Map<Double, String> leerVentas(Inventario inventario);
+	public Map<Double,String> listarMasVendidos(Map<Double, String> map);
 	
 
 }

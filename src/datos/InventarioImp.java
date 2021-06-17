@@ -226,14 +226,16 @@ public class InventarioImp implements Inventario {
 	 * @param map HashMap
 	 * @return Map<double, String>
 	 */
-	
-	public Map<Double, String> leerVentas(InventarioImp inventario) {
 
+
+	public Map<Double, String> leerVentas(InventarioImp inventario) {
+		
 		Map<Double, String> inventario2 = new HashMap<Double,String>();
 		inventario.getInventario().forEach((idJuego,juego) -> inventario2.put(juego.getEuSales(), juego.getName()));
-
+		
 		Map<Double, String> reverseSortedMap = new TreeMap<Double, String>(Collections.reverseOrder());
 		reverseSortedMap.putAll(inventario2);
+		
 
 		return reverseSortedMap;
 		}
