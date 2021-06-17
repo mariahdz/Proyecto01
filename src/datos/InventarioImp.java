@@ -1,13 +1,21 @@
 package datos;
 
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
 import model.Juego;
 import utilidades.RecogerDatos;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.Collections;
+import java.util.Iterator;
+
+
 
 /**
  * <p>
@@ -204,5 +212,55 @@ public class InventarioImp implements Inventario {
 
 	}
 
+	
+	
+	
+	/**
+	 * <p>
+	 * Método que devuelve un HashMap ordenado de manera descendente por el valor del atributo EuSales
+	 * del objeto Juego
+	 * @author Daniela Posas
+	 * @param map HashMap
+	 * @return Map<double, String>
+	 */
+	public Map<Double, String> leerVentas(Map<Integer, Juego> map) {
+		
+		Map<Double, String> mapa = new HashMap<Double,String>();
+		map.forEach((idJuego,juego) -> mapa.put(juego.getEuSales(), juego.getName()));
+		
+		Map<Double, String> reverseSortedMap = new TreeMap<Double, String>(Collections.reverseOrder());
+		reverseSortedMap.putAll(mapa);
+		
+		return reverseSortedMap;
+    }
+	
+	
+	/**
+	 * <p>
+	 * Método que devuelve un HashMap con los 10 primeros elementos del map que se pasa por parámetro
+	 * @author Daniela Posas
+	 * @param map HashMap
+	 * @return Map<double, String>
+	 */
+	public Map<Double, String> listarMasVendidos(Map<Double, String> map) {
+		
+		Map<Double, String> mapa = map;
+		int contador = 0;
+		Iterator<Entry<Double, String>> entries = map.entrySet().iterator();
+		
+		
+		while (entries.hasNext() && contador < 10) {
+		    Entry<Double, String> entry = entries.next();
+		    mapa.put(entry.getKey(), entry.getValue());
+		    System.out.println(entry.getValue() + " = "+  entry.getKey());
+		    contador ++;
+		}
+		
+		return mapa;
+	}
+	
 
 }
+	
+	
+

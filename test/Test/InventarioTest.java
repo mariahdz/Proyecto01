@@ -1,6 +1,7 @@
 package Test;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
 * Test metodo addJuego de Inventario
@@ -11,6 +12,7 @@ import static org.junit.Assert.assertNotNull;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -22,6 +24,7 @@ import org.junit.Ignore;
 
 import org.junit.Test;
 import datos.InventarioImp;
+import servicios.ServiciosLucaSteamImp;
 import model.Juego;
 
 
@@ -148,10 +151,10 @@ public class InventarioTest {
 	@Test
 	public void isValid() {
 		logger.info("probando que no inserta un juego nulo");
-		InventarioImp inventarioImp = new InventarioImp();
+		ServiciosLucaSteamImp serviciosImp = new ServiciosLucaSteamImp();
 		Juego juego = new Juego();
 		juego = null;
-		boolean resultadoObtenido = inventarioImp.addJuego(2, null);
+		boolean resultadoObtenido = serviciosImp.addJuego(2, null);
 		boolean resultadoEsperado = false;
 		
 		assertEquals(resultadoObtenido, resultadoEsperado);
@@ -225,21 +228,29 @@ public class InventarioTest {
 	
 	
 	//////////////////// LISTAR JUEGOS////////////////////////////////77
-	/*@Test
-	public void listarJuegosListaVacia() {
-	   logger.info(" ");
-	   InventarioImp inventarioImp = new InventarioImp();
-	   List<Juego> = inventarioImp.listarJuegos();
-	   Juego juego1 = new Juego();
-	   Juego juego2 = new Juego();
-	   
 
-	   
-	    
-	   assertNotNull("La lista 'juegos' que devuelve es null:", listaJuegos);
-		
-	}*/
 	
+	
+	/**
+	 * <p>
+	 * Test que comprueba que comprueba que el listado de juegos esta completo
+	 * </p>
+	 */
+	@Test
+	public void listadoCompleto() {
+		logger.info("probando si la lista de juegos esta completa");
+		InventarioImp inventarioImp = new InventarioImp();
+		Juego juego1 = new Juego();
+		Juego juego2 = new Juego();
+		inventarioImp.addJuego(1, juego1);
+		inventarioImp.addJuego(2, juego2);
+	    boolean resultadoObtenido = inventarioImp.listarJuegos();
+		boolean resultadoEsperado = true;
+		
+		assertEquals(resultadoEsperado, resultadoObtenido);
+	}
+
+
 	
 	
 	
