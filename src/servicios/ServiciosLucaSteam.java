@@ -20,7 +20,9 @@ public interface ServiciosLucaSteam {
 	public boolean eliminarJuego(int codigo);
 	
 	public void listarJuegos();
+	public void listarNombres();
 	
+	public boolean editarRanking();
 	public boolean editarRanking(int key);
 	
 	

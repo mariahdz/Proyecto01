@@ -225,7 +225,7 @@ public class InventarioTest {
 	
 	
 	//////////////////// LISTAR JUEGOS////////////////////////////////77
-	@Test
+	/*@Test
 	public void listarJuegosListaVacia() {
 	   logger.info(" ");
 	   InventarioImp inventarioImp = new InventarioImp();
@@ -238,7 +238,7 @@ public class InventarioTest {
 	    
 	   assertNotNull("La lista 'juegos' que devuelve es null:", listaJuegos);
 		
-	}
+	}*/
 	
 	
 	

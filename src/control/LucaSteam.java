@@ -16,6 +16,7 @@ import utilidades.RecogerDatos;
 
 
 
+
 public class LucaSteam {
 
 	
@@ -52,6 +53,7 @@ public class LucaSteam {
 		try {
 			switch (RecogerDatos.recogeInt()) {
 
+
 			case 1:
 			//Alta de un juego
 			inventario.addJuego();
@@ -86,6 +88,7 @@ public class LucaSteam {
 			continuar = salir();
 			break;
 		}
+
 		} catch (Exception e) {
 			System.out.println("Error: "+e.toString());
 		}

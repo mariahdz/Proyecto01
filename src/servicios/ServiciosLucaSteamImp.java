@@ -65,6 +65,19 @@ public class ServiciosLucaSteamImp implements ServiciosLucaSteam {
 	public void listarJuegos() {
 		inventario.listarJuegos();
 	}
+	
+	public boolean editarRanking() {
+		int key=0;
+		
+		try {
+			key = RecogerDatos.recogeInt("Introduzca la clave del juego que quieres editar");
+
+		}catch (Exception e) {
+				System.out.println("Ha ocurrido un error");
+				return false;
+			}
+		return editarRanking(key);
+	}
 
 	/**
 	 * Este método permite editar el atributo ranking de un juego
@@ -89,4 +102,8 @@ public class ServiciosLucaSteamImp implements ServiciosLucaSteam {
 			return false;
 	}
 
+	
+	public void listarNombres() {
+		inventario.listarNombres();
+	}
 }

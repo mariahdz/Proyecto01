@@ -145,12 +145,10 @@ public class InventarioImp implements Inventario {
 
 	public void listarJuegos() {
 
-
 		inventario.entrySet().stream().forEach(juegos -> {
-			System.out.println(juegos.getValue());
+		System.out.println(juegos.getValue());
 
 		});
-
 	}
 	
 	/**
@@ -159,8 +157,45 @@ public class InventarioImp implements Inventario {
 	 * @param key
 	 * @param value
 	 */
-	public void editarRanking(int key, int value) {
-		inventario.get(key).setRank(value);
+	public boolean editarRanking(int key,int value) {
+		try {
+		if (value > 0 && this.existePk(key)) {
+			inventario.get(key).setRank(value);
+			System.out.println("Modificado con éxito");
+			return true;
+		}else {
+			
+			System.out.println("No puedes editar el ranking");
+			return false;
+		}
+		
+		}catch (Exception e) {
+			System.out.println("Ha ocurrido un error");
+		}
+		return false;
+	}	
+	
+	/**
+	 * <p>
+	 * Método que lista los nombres de los juegos disponibles
+	 * @author María Hernández
+	 * @version 17/06/2021/A
+	 * <\p>
+	 */
+	public boolean listarNombres() {
+		
+		if(!inventario.isEmpty()){
+		inventario.entrySet()
+		.stream()
+		.forEach(juegos -> {System.out.println(juegos.getKey()+"--"+juegos.getValue().getName());
+
+		});
+		return true;
+		}else {
+			
+			return false;
+		}
+
 	}
 
 
