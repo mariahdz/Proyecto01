@@ -1,9 +1,6 @@
 package Test.Test;
 
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +13,6 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 
-import datos.Inventario;
 import datos.InventarioImp;
 import model.Juego;
 
